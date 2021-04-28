@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title> jQuery 쭉! 계속하기!</title>
+
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+
+    <script>
+
+        $(function(){
+
+            $("#doubleClickButton").dblclick(function(){
+                alert("더블 클릭 했습니다!")
+            })
+
+            $("#hoverButton").hover(
+                function(){
+                    $("#test").text("마우스가 올라왔습니다.")
+            },
+
+                function (){
+                    $("#test").text("마우스가 빠져나갔습니다.")
+                }
+            )
+
+            $("#eventTest").focus(function(){
+                $("#test").text("focus 발생")
+            })
+
+            $("#eventTest").blur(function(){
+                $("#test").text("blur 발생")
+            })
+
+            $("#eventTest").change(function(){
+                alert("변화감지")
+            })
+
+            $("#hideTest").click(function(){
+                $("#hide_showTest").hide()
+            })
+
+            $("#showTest").click(function (){
+                $("#hide_showTest").show()
+            })
+
+            $("#toggleTest").click(function(){
+                $("#hide_showTest").toggle()
+            })
+
+            $("#fadeToggleTest").click(function(){
+                $("#hide_showTest").fadeToggle()
+            })
+        })
+
+    </script>
+
+
+</head>
+
+<body>
+
+    <button id="doubleClickButton"> 그냥 클릭 말고 더블클릭!</button>
+    <button id="hoverButton"> 마우스 가져와 보세요</button>
+    <div id="test"></div>
+
+    <input type="text" id="eventTest">
+    <button id="hideTest"> 들어가라~ </button>
+    <button id="showTest"> 나와라~ </button>
+    <button id="toggleTest"> toggle Test </button>
+    <div id="hide_showTest"> 서서 보보 원원 </div>
+    <button id="fadeToggleTest"> fade toggle test </button>
+
+
+</body>
+
+</html>
