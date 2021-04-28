@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title> jQuery 쭉! 계속하기!</title>
+
+  <script src="https://code.jquery.com/jquery.min.js"></script>
+
+  <style>
+
+    .container * {
+      display: block;
+      border: 2px solid darkblue;
+      color : darkblue;
+      padding : 5px;
+      margin : 15px;
+    }
+
+  </style>
+
+  <script>
+
+    $(function(){
+
+      $("#siblingsButton").on("click", function(){
+        $("#me").siblings().css({"border" : "2px solid lightpink"})
+      })
+
+      $("#nextButton").on("click", function(){
+        $("#me").next().css({"border" : "2px solid darkred"})
+      })
+
+      $("#nextAllButton").on("click", function(){
+        $("#me").nextAll().css({"border" : "2px solid lightblue"})
+      })
+
+      $("#nextUntilButton").on("click", function(){
+        $("#brother").nextUntil("li:last").css({"border" : "2px solid darkgreen"})
+      })
+
+      $("#prevButton").on("click", function(){
+        $("#brother").prev().css({"border" : "2px solid darkgrey"})
+      })
+
+      $("#prevAllButton").on("click", function(){
+        $(".sister").prevAll().css({"border" : "2px solid yellow"})
+      })
+
+      $("#prevUntilButton").on("click", function(){
+        $(".brother").prevUntil("li:first").css({"border" : "2px solid orange"})
+      })
+
+    })
+
+  </script>
+
+
+</head>
+
+<body>
+
+  <div class="container">
+    <ul> 부모님
+      <li> 누나 </li>
+      <li id="brother"> 형 </li>
+      <li id="me"> 나</li>
+      <li class="brother"> 남동생 </li>
+      <li class="sister"> 여동생 </li>
+    </ul>
+  </div>
+
+<button id="siblingsButton"> siblings를 이용하여 나말고 모든 형제자매들 선택하기 </button>
+<button id="nextButton"> next를 이용하여 나 바로 다음에 위치한 형제자매를 선택하기</button>
+<button id="nextAllButton"> nextAll을 이용하여 나 바로 다음에 위치한 모든 형제자매를 선택하기</button>
+<button id="nextUntilButton"> nextUntil을 이용하여 형부터 선택한 여동생 이전까지 요소만을 모두 선택하기 </button>
+<button id="prevButton"> prev를 이용하여 형 이전의 형제자매를 선택하기</button>
+<button id="prevAllButton"> prevAll을 이용하여 여동생 이전의 모든 형재자매 선택하기</button>
+<button id="prevUntilButton"> prevUntil을 이용하여 남동생부터 누나 바로 이전까지의 모든 형제자매 선택하기</button>
+
+</body>
+
+</html>

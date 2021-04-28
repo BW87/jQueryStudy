@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<script src = "https://code.jquery.com/jquery.min.js"></script>
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>JQuery 시작하기</title>
+
+    <script>
+        $(function(){
+            $("li:has(b)").append(" - b를 들고있는 사람은 너다!");
+            $("li:has(a)").prepend("안타까운 친구 -> ");
+            $("p").appendTo($(".welcome"));
+            $("p1").prependTo($("li:has(a)"));
+        });
+    </script>
+</head>
+
+<body>
+    <p1> 난 코드상으로 제일 위에 있었지만...  쓸모 없는 친구 앞으로 가볼게.. ////&nbsp;&nbsp;&nbsp;</p1>
+    <div class="welcome"></div>
+    <div class="welcome2"></div>
+    <input type ="button" id="testButton" value="경고!">
+    <input type ="button" id="colorButton" value="색깔 변경!">
+    <li> 난 아무것도 없어 </li>
+    <li> 나도 아무것도 없어 </li>
+    <li><b> 난 b 태그를 가지고 있지 </b></li>
+    <li><a> 난 a 태그를 가지고 있는데... 쓸모가 없네 </a></li>
+    <p> 코드상으로는 요소들 중에 가장 밑에 있어야하지만! hello world 뒤로 올라가보겠습니다! </p>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        $(".welcome").text("hello world! coding everybody!").css("background-color","yellow");
+    </script>
+
+    <script type="text/javascript">
+        $(".welcome2").text("헬로 월드! 오늘은 화요일이야!").css("color", "blue")
+    </script>
+
+    <script>
+        $("#testButton").click(function onClick(){
+            alert("Jquery 버튼이 눌렸습니다!")
+        });
+    </script>
+
+    <script>
+        $("#colorButton").click(function (){
+            $(".welcome").css("color", "red");
+        });
+    </script>
+</body>
+</html>`

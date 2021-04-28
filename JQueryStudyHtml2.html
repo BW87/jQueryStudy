@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<script src="https://code.jquery.com/jquery.min.js"></script>
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>jQuery 연습하기</title>
+
+    <style>
+        p { margin: 10px; border: 1px solid blue; }
+        .wrap1 { margin: 10px; border: 1px solid green; }
+        .wrap2 { margin: 15px; border: 1px solid black;}
+    </style>
+
+    <script>
+        $(function() {
+            $("#single").click(function() {
+                $("p").wrap("<div class='wrap1'></div>");
+            });
+            $("#all").click(function(){
+                $("p").wrapAll("<div class='wrap2'></div>");
+            });
+        });
+    </script>
+
+</head>
+<body>
+
+    <p>안녕하세요.</p>
+    <p>선물입니다.</p>
+    <button id="single"> 개별 포장하기(wrap) </button>
+
+    <p>안녕?</p>
+    <p>우린 한꺼번에 포장해줘</p>
+    <button id="all"> 같이 포장하기(wrapAll) </button>
+
+</body>
+
+</html>

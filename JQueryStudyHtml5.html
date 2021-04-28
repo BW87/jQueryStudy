@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title> jQuery 공부 계속하기!</title>
+
+  <script src="https://code.jquery.com/jquery.min.js"></script>
+
+  <style>
+    .wrap{
+      background-color : #dcdcdc;
+      border : 3px solid red;
+    }
+  </style>
+
+  <script>
+    $(function(){
+      $("#removeButton").on("click",function(){
+        $("p").remove("#two, #four")
+      })
+
+      $("h3").on("click", function(){
+        $(this).toggleClass("wrap")
+      })
+
+      var data = null
+
+      $("#detachButton").on("click", function(){
+        // hello 클래스 명을 가진 요소들 detach로 삭제, 이때 삭제되는 요소와 관련된 jQuery 데이터나 이벤트는 삭제되지 않고 유지된다.
+        data = $(".hello").detach()
+      })
+
+      $("#restoreButton").on("click", function(){
+        $("h3").after(data)
+      })
+    })
+  </script>
+
+</head>
+
+<body>
+  <p id="one"> id = one 인 문장 </p>
+  <p id="two"> id = two 인 문장 </p>
+  <p id="three"> id = three 인 문장 </p>
+  <p id="four"> id = four 인 문장 </p>
+  <button id="removeButton"> 2번째, 4번째 문장 remove를 이용해 삭제</button>
+
+  <h3 class="hello"> 안녕하세요 </h3>
+  <h3> 서보원입니다. </h3>
+  <h3 class="hello"> 그럼 안녕히 계세요!</h3>
+  <button id="detachButton"> class = hello만 detach로 삭제</button>
+  <button id="restoreButton"> detach 메소드로 삭제된거 복구하기</button>
+
+</body>
+
+</html>

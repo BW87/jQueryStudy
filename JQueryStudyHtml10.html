@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title> jQuery 마스터하자</title>
+
+  <script src="https://code.jquery.com/jquery.min.js"></script>
+
+  <style>
+    .even{
+      color: green;
+    }
+  </style>
+
+  <script>
+
+    $(function(){
+
+      $("#eachButton").on("click", function(){
+
+        $("li").each(function (index){
+          if(index % 2 == 0){
+            $(this).addClass("even")
+          }
+        })
+
+      })
+
+      $("#nEndButton").on("click", function (){
+        $("#before").find("span").css({border : "2px solid darkgreen"})
+      })
+
+      $("#endButton").on("click", function(){
+        $("#after").find("span").end().css({border : "2px solid darkgreen"})
+      })
+
+    })
+
+  </script>
+</head>
+
+<body>
+
+  <ul>
+    <li> 0번째 아이템</li>
+    <li> 1번쨰 아이템</li>
+    <li> 2번째 아이템</li>
+    <li> 3번째 아이템</li>
+    <li> 4번째 아이템</li>
+  </ul>
+
+  <button id="eachButton"> 홀수번째 아이템만 css 적용하기!</button>
+
+  <p id="before"> end 적용전 ! <span> 서보원이에요! </span></p>
+  <p id="after"> end 적용후 ! <span> 서보원이에요! </span></p>
+
+  <button id="nEndButton"> end를 사용하지 않고 선택한 요소에 css 적용하기</button>
+  <button id="endButton"> end를 이용해서 실행한 메소드의 전 상태로 선택한 요소에 css 적용하기</button>
+</body>
+
+</html>

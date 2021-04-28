@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title> jQuery 공부 계속 계속하기!</title>
+
+  <script src="https://code.jquery.com/jquery.min.js"></script>
+
+  <style>
+    .container * {
+      display : block;
+      border: 2px solid lightgrey;
+      color: lightgrey;
+      padding: 5px;
+      margin: 15px;
+    }
+  </style>
+
+  <script>
+    $(function(){
+
+      $("#parentButton").on("click", function(){
+        $("ul").parent().css({"border" : "2px solid red"})
+      })
+
+      $("#parentsButton").on("click", function(){
+        $("li").parents().css({"border" : "2px solid lightblue"})
+      })
+
+      $("#parentsUntilButton").on("click", function (){
+        $("span").parentsUntil("div").css({"border" : "2px solid deepPink"})
+      })
+
+      $("#closetButton").on("click", function(){
+        $(".target").closest("ul").css({"border" : "2px solid purple"})
+      })
+
+    })
+  </script>
+
+</head>
+
+<body>
+
+  <div class="container">
+    <div> 조부모님
+      <ul> 부모님
+        <li> 서보원
+          <span class="target">  언젠가 생길지도 모를 아들 or 딸 </span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <button id="parentButton"> parent를 이용해 부모님의 부모요소 찾기</button>
+  <button id="parentsButton"> parents를 이용한 서보원의 모든 부모요소 찾기</button>
+  <button id="parentsUntilButton"> parentsUntil을 이용해 아들 딸의 모든 부모요소중 조부모 이전까지의 요소를 찾기 </button>
+  <button id="closetButton"> closet을 이용해 아들 딸과 상위요소 중에서 선택한 부모님 까지의 상위요소중 가장 첫번째 요소 선택하기 </button>
+
+  <!-- parents를 이용하면 최상위 태그인 html 까지 찾아버림-->
+
+</body>
+
+</html>

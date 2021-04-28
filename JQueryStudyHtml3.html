@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<script src="https://code.jquery.com/jquery.min.js"></script>
+
+<head>
+  <meta charset="UTF-8">
+
+  <title>jQuery 연습 또하기</title>
+
+  <style>
+
+    p { margin: 10px; border: 1px solid black;}
+    .wrap{margin: 10px; border: 1px solid pink;}
+
+    p1 { color: aqua; font-size: medium;}
+    .change{color: blueviolet; font-size: large;}
+
+  </style>
+
+  <script>
+    $(function(){
+
+      $("#wrapping").on("click", function(){
+        $("p").wrapInner("<div class='wrap'></div>");
+      });
+
+      $("#change").on("click", function (){
+        $("p1").html("<div class='change'> 변. 신. 완. 료.</div>");
+      });
+
+      $("#now").text(new Date());
+        setInterval(function(){
+          $("#now").text(new Date());
+        }, 1000);
+
+      $("#clone").on("click", function(){
+        $("#money").clone().appendTo("#me");
+      });
+
+    });
+  </script>
+
+</head>
+<body>
+  <p> 우린 안에서 감싸줘 </p>
+  <p> 부탁 드리겠습니다!</p>
+  <p1> 난 변신을 할거야!</p1>
+  <button id="wrapping"> 안에서 부터 감싸기 </button>
+  <button id="change"> 변신을 허락한다. </button>
+
+  <div id="now"></div>
+
+  <p2 id="me"> 난 나야! </p2>
+  <p2 id="middle>"> | </p2>
+  <p2 id="money"> 난 돈이야!</p2>
+
+  <button id="clone"> 돈이 복사가 됟다니깐?</button>
+</body>
+
+</html>

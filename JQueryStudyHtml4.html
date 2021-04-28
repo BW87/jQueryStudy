@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <script src="https://code.jquery.com/jquery.min.js"></script>
+
+  <script>
+
+    $(function() {
+      $("#btnReplaceAll1").on("click", function() {
+        $("<div>난 돈이 좋아!.</div>").replaceAll("p");
+      });
+
+      $("#btnReplaceAll2").on("click", function() {
+        $("#two").replaceAll($("#one"));
+      });
+
+      $("#replaceWith").on("click", function(){
+        $("h2").replaceWith("<div>Jqeury 공부하는거 입니다!</div>")
+      })
+
+      $("#replaceWith2").on("click", function(){
+        $("#three").replaceWith($("#four"))
+      })
+    });
+  </script>
+
+</head>
+
+<body>
+
+  <h1>.replaceAll() 메소드 - 요소 대체</h1>
+  <p> 안녕하세요! </p>
+  <p> 당신은 뭘 좋아하나요? </p>
+  <button id="btnReplaceAll1">요소 대체</button>
+
+  <h1>.replaceAll() 메소드 - 객체 대체</h1>
+  <div id="one">넌 사라져.</div>
+  <div id="two">넌 사라지지마!</div>
+  <button id="btnReplaceAll2">객체 대체</button>
+
+  <h2> 오늘 할 일이 뭐니?</h2>
+  <h2> 오늘 할 일이 뭐니?</h2>
+  <button id="replaceWith"> replaceWith 요소 변경</button>
+
+  <div id="three"> (id = three)공부 열심하 하고 있지?</div>
+  <div id="four"> (id = four)공부 열심하 하고 있는거겠지?</div>
+  <button id="replaceWith2"> replaceWith 객체 변경</button>
+
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title> jQuery 공부 계속 계속하기!</title>
+
+  <script src="https://code.jquery.com/jquery.min.js"></script>
+
+  <style>
+
+    .wrap{
+      background-color : gray;
+      border : 3px solid pink;
+    }
+
+  </style>
+
+  <script>
+    $(function(){
+
+      $("#emptyButton").on("click", function(){
+        $("#container").empty()
+      })
+
+      $("#unwrapButton").on("click", function(){
+        $("p").unwrap()
+      })
+    })
+  </script>
+
+</head>
+
+<body>
+
+  <div id="container" class="wrap">
+    <div> 난 곧 삭제될 문장이야</div>
+    <div> container라는 아이디를 가진 div 안에 있는 요소이지</div>
+    <div> 즉 자식요소란 말이야!</div>
+  </div>
+  <button id="emptyButton"> empty를 이용한 자식 요소 삭제</button>
+
+  <div id="container2" class="wrap">
+    <p> 난 container2의 자식요소이지</p>
+    <p> 그럼 container2의 id를 가지고 있는 div는 나의 부모 요소이지</p>
+    <p> 잘가! </p>
+  </div>
+  <button id="unwrapButton"> unwrap을 이용한 부모 요소 삭제</button>
+
+</body>
+
+</html>
