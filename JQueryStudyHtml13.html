@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title> jQuery ajax! 실습하기!</title>
+
+  <script src="https://code.jquery.com/jquery.min.js"></script>
+
+  <script>
+
+    $(function(){
+
+      $("#loginButton").on("click", function(){
+
+        let keyword = $("#number").val();
+
+        if (keyword === "") {
+          alert("숫자를 입력하세요");
+          return;
+        }
+
+        $.ajax({
+
+          type: "GET",
+
+          url: `http://numbersapi.com/${keyword}`,
+
+          data: {},
+
+          success: function(response) {
+
+            $("#ajaxTest").text(response)
+          },
+
+          error : function(){
+            alert("error")
+          }
+
+        });
+      })
+
+    })
+
+  </script>
+
+</head>
+
+<body>
+  <label> 숫자를 입력하세요 : </label>
+  <input type="text" id="number" name="number">
+  <button id="loginButton"> Ajax Test </button>
+  <div id="ajaxTest"></div>
+
+</body>
+
+</html>
